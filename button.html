@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Experiment 1</h2>
+
+<p>A <b>JavaScript program</b> to <b>add button</b> by <b>clicking "+"</b> and <b>delete button</b> by <b>clicking "-".</b></p>
+
+<button type="button" onclick="addFunction()">+</button>
+
+<button type="button" onclick="removeFunction()">-</button>
+
+<script>
+var n=0;
+
+
+function addFunction(){
+if(n<10){
+var btn = document.createElement("BUTTON");
+n++;
+btn.id = "btn-"+n;
+btn.innerHTML = n;
+document.getElementById("where_to_add_btn").appendChild(btn);
+
+} else if(n >= 10){
+window.alert("Crosssed highest limit 10");
+}
+}
+
+function removeFunction(){
+if(n>=1){
+var btn = document.getElementById("btn-"+n);
+document.getElementById("where_to_add_btn").removeChild(btn);
+n--;
+} else if(n <= 0){
+window.alert("Crossed lowest limit 0");
+}
+}
+</script>
+<p id="demo">
+
+
+</p>
+<div id="where_to_add_btn"></div>
+
+</body>
+</html>
